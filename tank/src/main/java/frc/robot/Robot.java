@@ -35,11 +35,11 @@ public class Robot extends TimedRobot {
  public final CommandXboxController driverXbox = new CommandXboxController(0);
   
 
-  private final SparkMax leftLeader = new SparkMax(1, MotorType.kBrushed);
-  private final SparkMax rightLeader = new SparkMax(3, MotorType.kBrushed);
-  private final SparkMax rightFollower = new SparkMax(2, MotorType.kBrushed);
-  private final SparkMax leftFollower = new SparkMax(4, MotorType.kBrushed);
-  private final SparkMax roller = new SparkMax(5, MotorType.kBrushed);
+  private final SparkMax leftLeader = new SparkMax(1, MotorType.kBrushless);
+  private final SparkMax rightLeader = new SparkMax(2, MotorType.kBrushless);
+  // private final SparkMax rightFollower = new SparkMax(2, MotorType.kBrushed);
+  // private final SparkMax leftFollower = new SparkMax(4, MotorType.kBrushed);
+  private final SparkMax roller = new SparkMax(5, MotorType.kBrushless);
 
   /** Called once at the beginning of the robot program. */
   public Robot() {
@@ -63,14 +63,14 @@ public class Robot extends TimedRobot {
     // Apply the global config and invert since it is on the opposite side
 
     // Apply the global config and set the leader SPARK for follower mode
-    leftFollowerConfig
-        .apply(globalConfig)
-        .follow(leftLeader);
+    // leftFollowerConfig
+    //     .apply(globalConfig)
+    //     .follow(leftLeader);
 
     // Apply the global config and set the leader SPARK for follower mode
-    rightFollowerConfig
-        .apply(globalConfig)
-        .follow(rightLeader);
+    // rightFollowerConfig
+        // .apply(globalConfig)
+        // .follow(rightLeader);
 
     /*
      * Apply the configuration to the SPARKs.
@@ -83,9 +83,9 @@ public class Robot extends TimedRobot {
      * mid-operation.
      */
     leftLeader.configure(globalConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-    leftFollower.configure(leftFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    // leftFollower.configure(leftFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     rightLeader.configure(rightLeaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-    rightFollower.configure(rightFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    // rightFollower.configure(rightFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
   }
 
