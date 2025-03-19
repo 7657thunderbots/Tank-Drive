@@ -49,10 +49,7 @@ public class Robot extends TimedRobot {
     m_robotDrive = new DifferentialDrive(leftLeader, rightLeader);
 
 
- SparkMaxConfig globalConfig = new SparkMaxConfig();
-    SparkMaxConfig rightLeaderConfig = new SparkMaxConfig();
-    SparkMaxConfig leftFollowerConfig = new SparkMaxConfig();
-    SparkMaxConfig rightFollowerConfig = new SparkMaxConfig();
+
 
     /*
      * Set parameters that will apply to all SPARKs. We will also use this as
@@ -82,10 +79,10 @@ public class Robot extends TimedRobot {
      * the SPARK MAX loses power. This is useful for power cycles that may occur
      * mid-operation.
      */
-    leftLeader.configure(globalConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-    // leftFollower.configure(leftFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-    rightLeader.configure(rightLeaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-    // rightFollower.configure(rightFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    // leftLeader.configure(globalConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    // // leftFollower.configure(leftFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    // rightLeader.configure(rightLeaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    // // rightFollower.configure(rightFollowerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
   }
 
